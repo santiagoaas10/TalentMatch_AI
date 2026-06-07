@@ -1,0 +1,5 @@
+.env
+tmp
+
+# Claude Code: config personal por máquina (no compartir)
+.claude/settings.local.json
