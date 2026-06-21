@@ -1,0 +1,43 @@
+[project]
+name = "talentmatch-backend"
+version = "0.1.0"
+description = "TalentMatch AI backend — agente de búsqueda y match de empleos tech"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+]
+
+# Grupo de dependencias de desarrollo: uv las instala por defecto en local,
+# pero NO van a la imagen de producción (las omitiremos en el Dockerfile).
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "httpx>=0.27",
+    "ruff>=0.7",
+    "mypy>=1.13",
+    "black>=24.10",
+]
+
+# El backend es una APLICACIÓN, no una librería publicable: no necesita
+# build backend ni instalarse como paquete. Esto se lo decimos a uv.
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.pytest.ini_options]
+# pythonpath = ["."] hace importable el paquete `app` desde los tests
+# sin tener que instalar el proyecto.
+pythonpath = ["."]
+testpaths = ["tests"]

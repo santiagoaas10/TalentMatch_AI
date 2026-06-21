@@ -1,5 +1,25 @@
+# Secrets y temporales
 .env
+.env.local
+.env.*.local
 tmp
 
 # Claude Code: config personal por máquina (no compartir)
 .claude/settings.local.json
+
+# --- Python / backend ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend ---
+node_modules/
+.next/
+out/
+next-env.d.ts
+npm-debug.log*
