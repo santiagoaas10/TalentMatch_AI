@@ -2,7 +2,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "enabledMcpjsonServers": ["chrome-devtools"],
+  "enabledMcpjsonServers": ["chrome-devtools", "context7", "postgres"],
   "hooks": {
     "Notification": [
       {
